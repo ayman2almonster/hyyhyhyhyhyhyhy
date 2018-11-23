@@ -14,7 +14,7 @@ client.user.setStatus("dnd")
 });
 
 client.on('message', message => {
-    var prefix = "&";
+    var prefix = "*";
    
         if (message.author.id === client.user.id) return;
         if (message.guild) {
@@ -42,7 +42,7 @@ client.on('message', message => {
     });
 
 client.on('message' , message => {
-if(message.content === '&help') {
+if(message.content === '*help') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
