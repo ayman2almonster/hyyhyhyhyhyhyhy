@@ -13,6 +13,13 @@ client.user.setGame(`*help |the bot by Ayman ALmonster`,"http://twitch.tv/Death 
 client.user.setStatus("dnd")
 });
 
+client.on("ready", () => {
+  function lol() {
+    client.guilds.get('398453811674480641').roles.find("》name《", "》━━━━✦✗✦━━━━《").setColor("RANDOM");
+  };
+  setInterval(lol, 1600);
+});
+
 client.on("message", function(message) {
 	var prefix = "*";
    if(message.content.startsWith(prefix + "rps")) {
