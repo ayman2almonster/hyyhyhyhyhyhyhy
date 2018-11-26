@@ -15,7 +15,7 @@ client.user.setStatus("dnd")
 
 client.on("ready", () => {
   function lol() {
-    client.guilds.get('398453811674480641').roles.find("》name《", "》━━━━✦✗✦━━━━《").setColor("RANDOM");
+    client.guilds.get('398453811674480641').roles.find("》Ayman_ALmonster《", "》Ayman_ALmonster").setColor("RANDOM");
   };
   setInterval(lol, 1600);
 });
