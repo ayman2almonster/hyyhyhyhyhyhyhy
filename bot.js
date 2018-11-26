@@ -14,7 +14,7 @@ client.user.setStatus("dnd")
 });
 
 client.on("message", function(message) {
-	var prefix = "!";
+	var prefix = "*";
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
@@ -90,14 +90,15 @@ message.author.send(`
 ***__وصف عن البوت__***
 **
 ????????????? {?اوامر البوت?} ?????????????
-? &bc ? برودكاست ب امبيد وبدون
-? &Link ? رابط انفايت للسيرفر
-? &clear ? مسح الشات
-? &server ? لعرض معلومات السيرفر
-? &marry ? لعبة الزواج
-? &kf ? لعبة كف
-? &mc ? قفل الشات
-? &new ? لانشاء تذكرة
+? *bc ? برودكاست ب امبيد وبدون
+? *Link ? رابط انفايت للسيرفر
+? *clear ? مسح الشات
+? *server ? لعرض معلومات السيرفر
+? *marry ? لعبة الزواج
+? *kf ? لعبة كف
+? *mc ? قفل الشات
+? *rps لعبة حجره ورقه مقص
+? *new ? لانشاء تذكرة
 ????????????? {? By Ayman ALmonster ?} ?????????????
 **
 `);
