@@ -25,7 +25,7 @@ client.on("message", message => {
       }).then(collected => {
         message.delete();
         m.delete();
-        message.member.addRole(message.guild.roles.find(c => c.name == "Verified")); // اسم الرتبة
+        message.member.addRole(message.guild.roles.find(c => c.name == "●MEMBERS●")); // اسم الرتبة
       }).catch(() => {
         m.edit(`You took to long to type the number.\nRe-type the command again if you want to verify yourself.`).then(m2 => m.delete(15000));
       });
