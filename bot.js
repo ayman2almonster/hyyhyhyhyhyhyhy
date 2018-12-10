@@ -13,6 +13,14 @@ client.user.setGame(`*help |the bot by Ayman ALmonster`,"http://twitch.tv/Death 
 client.user.setStatus("dnd")
 });
 
+client.on('message', message=> {
+    if (message.author.bot) return;
+    if (message.isMentioned(client.user))
+    {
+    message.reply(" كيف اقدر اساعدك!!");
+    }
+});
+
 client.on("guildMemberAdd", member => {
     member.createDM().then(function (channel) {
         return channel.send(`:rose:  ALmonster ولكم نورت السيرفر :rose:
