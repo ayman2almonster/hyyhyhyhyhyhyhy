@@ -13,6 +13,21 @@ client.user.setGame(`*help |the bot by Ayman ALmonster`,"http://twitch.tv/Death 
 client.user.setStatus("dnd")
 });
 
+client.on('guildMemberRemove', member => {
+    var embed = new Discord.RichEmbed()
+.setAuthor(member.user.username, member.user.avatarURL)
+.setThumbnail(member.user.avatarURL)
+.setTitle('***خرج من السيرفر***')
+.addField('**الاسم**',`[ ${member} ]`)
+.addField('**عدد الاعضاء**',`[ ${member.guild.memberCount} ]`,true)
+.setColor('Random')
+   
+   var channel =member.guild.channels.find('name', 'welcome')
+   if (!channel) return;
+         channel.send({embed : embed});
+ 
+});
+
 client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
