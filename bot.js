@@ -13,6 +13,24 @@ client.user.setGame(`*help |the bot by Ayman ALmonster`,"http://twitch.tv/Death 
 client.user.setStatus("dnd")
 });
 
+client.on('message', message => {
+if(message.content.startsWith("*slots")) {
+let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+let slot2 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+let slot3 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
+let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+let slots3 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
+let we;
+if(slots1 === slots2 && slots2 === slots3) {
+we = "Win, GG."
+} else {
+we = "Lose :'("
+}
+message.channel.send(`${slots1} | ${slots2} | ${slots3} - ${we}`)
+}
+});
+
 client.on('guildMemberAdd', member => { //LAST CODES -HONRAR-
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
@@ -376,6 +394,7 @@ message.author.send(`
 ***__وصف عن البوت__***
 **
 ????????????? {?اوامر البوت?} ?????????????
+? *slots
 ? *gstart
 ? *date لمعرفة التاريخ
 ? *bc ? برودكاست ب امبيد وبدون
