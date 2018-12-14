@@ -406,7 +406,7 @@ client.on('message', message => {
     if(message.content.split(' ')[0] == prefix + 'bc') {
         if (!args[1]) 
 		
-    }
+  
             message.guild.members.forEach(m => {
        if(!message.member.hasPermission('ADMINISTRATOR')) return;
                 var bc = new Discord.RichEmbed()
