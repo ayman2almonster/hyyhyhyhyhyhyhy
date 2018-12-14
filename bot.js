@@ -412,6 +412,11 @@ client.on('message', message => {
        if(!message.member.hasPermission('ADMINISTRATOR')) return;
                 var bc = new Discord.RichEmbed()
 		
+		
+		
+		
+		
+		
             });
         }
         } else {
