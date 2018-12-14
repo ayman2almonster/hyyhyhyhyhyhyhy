@@ -416,7 +416,7 @@ client.on('message', message => {
 		
 		
 		
-		
+		m.send(`${m}`,{embed: bc});
             });
         }
         } else {
