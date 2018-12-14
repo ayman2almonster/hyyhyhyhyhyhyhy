@@ -404,13 +404,19 @@ client.on('message', message => {
        let embed = new Discord.RichEmbed()
         let args = message.content.split(' ').slice(1).join(' ');
     if(message.content.split(' ')[0] == prefix + 'bc') {
-        if (!args[1]) 
-		
-  
+        if (!args[1]) {
+    message.channel.send("*bc <message>");
+    return;
+    }
             message.guild.members.forEach(m => {
        if(!message.member.hasPermission('ADMINISTRATOR')) return;
                 var bc = new Discord.RichEmbed()
 
+            });
+        }
+        } else {
+            return;
+        }
     });
 
 client.on('message' , message => {
