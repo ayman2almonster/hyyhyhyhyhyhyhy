@@ -403,7 +403,7 @@ client.on('message', message => {
         if (message.guild) {
        let embed = new Discord.RichEmbed()
         let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
+    if(message.content.split(' ')[0] == prefix + 'bcc') {
         if (!args[1]) {
     message.channel.send("*bc <message>");
     return;
@@ -423,6 +423,20 @@ client.on('message', message => {
             return;
         }
     });
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {  ///الامر
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` **: عدد الاعضاء المستلمين**`); 
+ message.delete(); 
+};     
+});
 
 client.on('message' , message => {
 if(message.content === '*help') {
