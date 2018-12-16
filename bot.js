@@ -32,7 +32,7 @@ client.channels.find('id', '523951613313024051').setName("Welcome To ALmons");
 client.channels.find('id', '523951613313024051').setName("Welcome To ALmonst"); /// حط انت الاسم التبيه بدل النقاط
 client.channels.find('id', '523951613313024051').setName("Welcome To ALmonste");
 client.channels.find('id', '523951613313024051').setName("Welcome To ALmonster");
-}, 3000);
+}, 8000);
 });
 
 client.on('message', function(msg) {
