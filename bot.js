@@ -15,23 +15,23 @@ client.user.setStatus("dnd")
 
 client.on("ready", async  => {
 setInterval(function(){
-client.channels.find('id', '516619338598449163').setName("W");
-client.channels.find('id', '516619338598449163').setName("We");
-client.channels.find('id', '516619338598449163').setName("Wel");
-client.channels.find('id', '516619338598449163').setName("Welc");
-client.channels.find('id', '516619338598449163').setName("Welco");
-client.channels.find('id', '516619338598449163').setName("Welcom");
-client.channels.find('id', '516619338598449163').setName("Welcome");
-client.channels.find('id', '516619338598449163').setName("Welcome T");
-client.channels.find('id', '516619338598449163').setName("Welcome To");
-client.channels.find('id', '516619338598449163').setName("Welcome To A");
-client.channels.find('id', '516619338598449163').setName("Welcome To AL");
-client.channels.find('id', '516619338598449163').setName("Welcome To ALm");
-client.channels.find('id', '516619338598449163').setName("Welcome To ALmon");
-client.channels.find('id', '516619338598449163').setName("Welcome To ALmons");
-client.channels.find('id', '516619338598449163').setName("Welcome To ALmonst"); /// حط انت الاسم التبيه بدل النقاط
-client.channels.find('id', '516619338598449163').setName("Welcome To ALmonste");
-client.channels.find('id', '516619338598449163').setName("Welcome To ALmonster");
+client.channels.find('id', '523951613313024051').setName("W");
+client.channels.find('id', '523951613313024051').setName("We");
+client.channels.find('id', '523951613313024051').setName("Wel");
+client.channels.find('id', '523951613313024051').setName("Welc");
+client.channels.find('id', '523951613313024051').setName("Welco");
+client.channels.find('id', '523951613313024051').setName("Welcom");
+client.channels.find('id', '523951613313024051').setName("Welcome");
+client.channels.find('id', '523951613313024051').setName("Welcome T");
+client.channels.find('id', '523951613313024051').setName("Welcome To");
+client.channels.find('id', '523951613313024051').setName("Welcome To A");
+client.channels.find('id', '523951613313024051').setName("Welcome To AL");
+client.channels.find('id', '523951613313024051').setName("Welcome To ALm");
+client.channels.find('id', '523951613313024051').setName("Welcome To ALmon");
+client.channels.find('id', '523951613313024051').setName("Welcome To ALmons");
+client.channels.find('id', '523951613313024051').setName("Welcome To ALmonst"); /// حط انت الاسم التبيه بدل النقاط
+client.channels.find('id', '523951613313024051').setName("Welcome To ALmonste");
+client.channels.find('id', '523951613313024051').setName("Welcome To ALmonster");
 }, 3000);
 });
 
