@@ -13,27 +13,7 @@ client.user.setGame(`*help |the bot by Ayman ALmonster`,"http://twitch.tv/Death 
 client.user.setStatus("dnd")
 });
 
-client.on("ready", async  => {
-setInterval(function(){
-client.channels.find('id', '523951613313024051').setName("W");
-client.channels.find('id', '523951613313024051').setName("We");
-client.channels.find('id', '523951613313024051').setName("Wel");
-client.channels.find('id', '523951613313024051').setName("Welc");
-client.channels.find('id', '523951613313024051').setName("Welco");
-client.channels.find('id', '523951613313024051').setName("Welcom");
-client.channels.find('id', '523951613313024051').setName("Welcome");
-client.channels.find('id', '523951613313024051').setName("Welcome T");
-client.channels.find('id', '523951613313024051').setName("Welcome To");
-client.channels.find('id', '523951613313024051').setName("Welcome To A");
-client.channels.find('id', '523951613313024051').setName("Welcome To AL");
-client.channels.find('id', '523951613313024051').setName("Welcome To ALm");
-client.channels.find('id', '523951613313024051').setName("Welcome To ALmon");
-client.channels.find('id', '523951613313024051').setName("Welcome To ALmons");
-client.channels.find('id', '523951613313024051').setName("Welcome To ALmonst"); /// حط انت الاسم التبيه بدل النقاط
-client.channels.find('id', '523951613313024051').setName("Welcome To ALmonste");
-client.channels.find('id', '523951613313024051').setName("Welcome To ALmonster");
-}, 8000);
-});
+
 
 client.on('message', function(msg) {
   let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
