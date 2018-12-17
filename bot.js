@@ -18,7 +18,7 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
-const welcome = JSON.parse(fs.readFileSync('welcomer.json' , 'utf8'));
+const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
  
 client.on('message', message => {
            if (!message.channel.guild) return;
