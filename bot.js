@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 const mhstr = new Discord.Client();
 
 mhstr.on('ready',async () => {
-  mhstr.channels.find(ch => ch.id === "حط ايدي روم هنا" && ch.type === 'voice').join();
+  mhstr.channels.find(ch => ch.id === "530174812207972360" && ch.type === 'voice').join();
 });
 /// كود فويس وشكرا لكم حقوق نوركس ديفلوب
 
