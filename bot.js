@@ -7,12 +7,6 @@ client.on('ready', () => {
 });
 
 
-client.on("guildMemberAdd", (member) => {
-client.channels.get('530320356645535754').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
-client.on("guildMemberRemove", (member) => {
-client.channels.get('530320356645535754').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
-})
 
   client.on('message', message => { //ping
                                 if(!message.channel.guild) return;
