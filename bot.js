@@ -6,7 +6,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
 });
 
- 
+ client.on("guildMemberAdd", (member) => {
+client.channels.get('530174812207972360').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
+client.on("guildMemberRemove", (member) => {
+client.channels.get('530174812207972360').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+})
 
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
