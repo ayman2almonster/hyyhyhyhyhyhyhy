@@ -6,19 +6,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
 });
 
-const Discord = require('discord.js');
-const mhstr = new Discord.Client();
 
-mhstr.on('ready',async () => {
-  mhstr.channels.find(ch => ch.id === "530174812207972360" && ch.type === 'voice').join();
-});
-/// كود فويس وشكرا لكم حقوق نوركس ديفلوب
-
- client.on("guildMemberAdd", (member) => {
-client.channels.get('530174812207972360').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+client.on("guildMemberAdd", (member) => {
+client.channels.get('530320356645535754').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
 client.on("guildMemberRemove", (member) => {
-client.channels.get('530174812207972360').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
+client.channels.get('530320356645535754').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
 
   client.on('message', message => { //ping
