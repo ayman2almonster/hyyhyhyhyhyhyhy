@@ -6,6 +6,14 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
 });
 
+const Discord = require('discord.js');
+const mhstr = new Discord.Client();
+
+mhstr.on('ready',async () => {
+  mhstr.channels.find(ch => ch.id === "حط ايدي روم هنا" && ch.type === 'voice').join();
+});
+/// كود فويس وشكرا لكم حقوق نوركس ديفلوب
+
  client.on("guildMemberAdd", (member) => {
 client.channels.get('530174812207972360').edit({name : `『 الأعضاء ↩ ${member.guild.memberCount} 』`});
 })
