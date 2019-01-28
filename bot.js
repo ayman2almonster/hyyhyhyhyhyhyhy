@@ -29,7 +29,7 @@ const moment = require("moment")
 const fs = require("fs")
  
 client.on("guildMemberAdd", member => {
-let welcomer = member.guild.channels.find('name', `Welcome`)
+let welcomer = member.guild.channels.find('name', `welcome`)
 let memberavatar = member.user.avatarURL
 if (!welcomer) return;
 if(welcomer) {
