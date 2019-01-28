@@ -37,7 +37,7 @@ client.on('guildMemberAdd', Sal => { //By Salto7#4595
     channel.send({embed : embed});
     });
 
-const devs = ["هناااا["355126496169426945
+const devs = "هنا ااا  "355126496169426945
  
 const adminprefix = "Q";//Narox
 client.on('message', message => {
