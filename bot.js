@@ -47,21 +47,6 @@ client.on('message', message => {//Mrx - Dev
                     });
 
 
-client.on("guildMemberAdd", member => {
-let welcomer = member.guild.channels.find('name', `welcome`)
-let memberavatar = member.user.avatarURL
-if (!welcomer) return;
-if(welcomer) {
-moment.locale('ar-ly');
-var mrx = member.user;
-let mrxembed = new Discord.RichEmbed()
-.setTitle(mrx.username,`#${mrx.discriminator}`)
-.addField('» Joined Discord ago',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-.addField('» Your Number',`${member.guild.memberCount}`,true)
-.setThumbnail(mrx.avatarURL)
-.setFooter("Zombie Games.")
-welcomer.send({embed:mrxembed});          
-}})
  
 client.on('guildMemberAdd', member => {
 member.guild.fetchInvites().then(guildInvites => {
