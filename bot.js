@@ -6,6 +6,83 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  
 });
 
+const devs = ["هناااا["355126496169426945
+ 
+const adminprefix = "Q";//Narox
+client.on('message', message => {
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!devs.includes(message.author.id)) return;
+     
+  if (message.content.startsWith(adminprefix + 'pt')) {
+    client.user.setGame(argresult);
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else
+    if (message.content === (adminprefix + "Percie")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'wt')) {// لجعل البوت في حاله الواتشنق
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else
+  if (message.content.startsWith(adminprefix + 'setprefix')) {//لتغير البريفكس
+  client.user.setPrefix(argresult).then
+      message.channel.send(`**Prefix Changed :white_check_mark: ${argresult}** `)
+  } else
+  if (message.content.startsWith(adminprefix + 'ls')) {// لجعل البوت في حاله الاستماع
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  } else     //Narox
+    if (message.content.startsWith(adminprefix + 'setname')) {// لتغير اسم البوت
+  client.user.setUsername(argresult).then
+      message.channel.sendMessage(`**${argresult}** : Done `)
+  return message.reply("**Name Changed :white_check_mark:**");
+  } else
+    if (message.content.startsWith(adminprefix + 'seta')) {// لتغير صوره البوت
+  client.user.setAvatar(argresult);
+    message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+        } else    
+  if (message.content.startsWith(adminprefix + 'st')) {// لعمل ستريمنق للبوت
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  }
+    if(message.content === adminprefix + "restart") {// لعمل ريسترت للبوت
+      if (!devs.includes(message.author.id)) return;
+          message.channel.send(`:warning:️ **Bot restarting by ${message.author.username}**`);
+        console.log("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(`⚠️ Bot restarting... ⚠️`);
+        console.log("===============================================\n\n");
+        client.destroy();
+        child_process.fork(__dirname + "/bot.js");
+        console.log(`Bot Successfully Restarted`);
+    }
+ 
+  });
+
+const invites = {};
+//Narox
+const wait = require('util').promisify(setTimeout);
+//Narox
+client.on('ready', () => {
+  wait(1000);
+//Narox
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});//Narox
+//Narox
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;//Narox
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "welcome");
+    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
+  });
+});//Narox
+
 client.on('message', message => {//Mrx - Dev
     if (message.content.startsWith(prefix + 'sug')) {//Mrx - Dev
         if (message.author.bot) return//Mrx - Dev
@@ -47,102 +124,6 @@ client.on('message', message => {//Mrx - Dev
                     });
 
 
- 
-client.on('guildMemberAdd', member => {
-member.guild.fetchInvites().then(guildInvites => {
-const ei = invites[member.guild.id];
-invites[member.guild.id] = guildInvites;
-const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-const inviter = client.users.get(invite.inviter.id);
-const logChannel = member.guild.channels.find(channel => channel.name === `main-chat`);
-if(!logChannel) return;
-setTimeout(() => {
-logChannel.send(`Invited By: <@${inviter.id}>`);
-},2000)
-});
-});
- 
-client.on('guildMemberAdd',async member => {
-const Canvas = require('canvas');
-const jimp = require('jimp');
-const w = ['./welcome_4.png'];
-let Image = Canvas.Image,
-    canvas = new Canvas(800, 300),
-    ctx = canvas.getContext('2d');
-ctx.patternQuality = 'bilinear';
-ctx.filter = 'bilinear';
-ctx.antialias = 'subpixel';
-ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-ctx.shadowOffsetY = 2;
-ctx.shadowBlur = 2;
-ctx.stroke();
-ctx.beginPath();
- 
-fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-    if (err) return console.log(err);
-    let BG = Canvas.Image;
-    let ground = new Image;
-    ground.src = Background;
-    ctx.drawImage(ground, 0, 0, 800, 300);
- 
-})
- 
-        let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
-        jimp.read(url, (err, ava) => {
-            if (err) return console.log(err);
-            ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-         if (err) return console.log(err);
- 
-  ctx.font = '36px Arial';
-  ctx.fontSize = '72px';
-  ctx.fillStyle = "#ffffff";
-  ctx.textAlign = "center";
-  ctx.fillText(member.user.username, 545, 177);
- 
-  ctx.font = '16px Arial Bold';
-  ctx.fontSize = '72px';
-  ctx.fillStyle = "#ffffff";
-  ctx.textAlign = "center";
-  ctx.fillText(`${member.guild.memberCount} Members`, 580, 200);
- 
-  let Avatar = Canvas.Image;
-  let ava = new Avatar;
-  ava.src = buf;
-  ctx.beginPath();
-  ctx.arc(169.5, 148, 126.9, -100, Math.PI * 2, true);
-  ctx.closePath();
-  ctx.clip();
-  ctx.drawImage(ava, 36, 21, 260, 260);
-   
-  let c = member.guild.channels.find('name', `welcome`)
-  if(!c) return;
-  c.sendFile(canvas.toBuffer());
- 
-});
-});
-});
- 
-const invites = {};
- 
-const wait = require('util').promisify(setTimeout);
- 
-client.on('ready', () => {
-wait(1000);
- 
-client.guilds.forEach(g => {
-g.fetchInvites().then(guildInvites => {
-invites[g.id] = guildInvites;
-});
-});
-});
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(`ولكم نورت السيرفر
- ${member}  
- `) 
-}).catch(console.error)
-})
 
 client.on("message", message => {
   if(message.content.startsWith("*verify")) { // الامر والبريفكس
