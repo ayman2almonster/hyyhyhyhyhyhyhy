@@ -25,9 +25,7 @@ client.on('ready', () => {
                         }
                     });
 
-const moment = require("moment")
-const fs = require("fs")
- 
+
 client.on("guildMemberAdd", member => {
 let welcomer = member.guild.channels.find('name', `welcome`)
 let memberavatar = member.user.avatarURL
@@ -110,7 +108,7 @@ fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Backgro
   ctx.clip();
   ctx.drawImage(ava, 36, 21, 260, 260);
    
-  let c = member.guild.channels.find('name', `روم الترحيب`)
+  let c = member.guild.channels.find('name', `welcome`)
   if(!c) return;
   c.sendFile(canvas.toBuffer());
  
